@@ -4,22 +4,20 @@ import 'package:newstv/services/api_services.dart';
 
 class PostDetailController extends GetxController {
   var isLoading = true.obs;
-  var postsModel = <NewsModel>[].obs;
+  var postModel = NewsModel().obs;
   @override
   void onInit() {
     super.onInit();
-    fetchPostDetail();
+    fetchPostDetails();
   }
 
-  Future<void> fetchPostDetail({postId = 1}) async {
+  Future<void> fetchPostDetails({postId = 1}) async {
     try {
       isLoading(true);
       var postDetails =
-          await APIService().fetchPostDetail(postId);
+          await APIService().fetchPostDetails(postId);
       // postsModel.addAll(posts);
-      if (postsModel != null) {
-        postsModel.value = postDetails;
-      }
+      postModel.value = postDetails as NewsModel;
     } finally {
       isLoading(false);
     }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:newstv/model/news_model.dart';
 import 'package:newstv/news_detail.dart';
 
@@ -17,11 +18,12 @@ class NewsCardWidget extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => NewsDetail(),
-              ));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => NewsDetail(),
+          //     ));
+          Get.to(NewsDetail(), arguments: model.id);
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -35,16 +35,17 @@ class APIService {
   }
 
 //-------------Request for fetching post details-------------------//
-  Future<List<NewsModel>> fetchPostDetail(
+  Future<List<NewsModel>> fetchPostDetails(
       String postId) async {
     var response = await client.get(
-      Uri.parse(Config.apiURL + Config.postURL + postId),
+      Uri.parse(Config.apiURL + Config.postDetail + postId),
     );
 
-    if (response.statusCode != 200) {
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      return newsModelFromJson(jsonString);
+    } else {
       return List.empty();
     }
-    var jsonString = response.body;
-    return newsModelFromJson(jsonString);
   }
 }

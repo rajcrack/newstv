@@ -21,13 +21,13 @@ class NewsModel {
   String category;
 
   NewsModel({
-    required this.id,
-    required this.title,
-    required this.date,
-    required this.author,
-    required this.content,
-    required this.image,
-    required this.category,
+    this.id = '1',
+    this.title = '21',
+    this.date = '11',
+    this.author = '1',
+    this.content = '1',
+    this.image = '1',
+    this.category = '1',
   });
 
   factory NewsModel.fromJson(Map<String, dynamic> json) =>
