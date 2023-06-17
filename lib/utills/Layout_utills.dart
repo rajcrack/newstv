@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class LayoutUtils {
@@ -5,7 +7,7 @@ class LayoutUtils {
     return Row(
       children: [
         iconWidget,
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         textWidget

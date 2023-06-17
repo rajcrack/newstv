@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:newstv/home_page.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
@@ -20,6 +23,10 @@ class MyApp extends StatelessWidget {
             .copyWith(secondary: Colors.cyan[600]),
       ),
       home: const HomePage(),
+      //   AnimatedSplashScreen(
+      // nextScreen: const HomePage(),
+      // splash: null,
+      // ),
     );
   }
 }

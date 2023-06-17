@@ -1,15 +1,18 @@
 import 'package:get/get.dart';
-import 'package:newstv/model/category_model.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:newstv/model/news_model.dart';
 import 'package:newstv/services/api_services.dart';
 
 class PostsController extends GetxController {
   var isLoading = true.obs;
   var postsList = <NewsModel>[].obs;
+  // var liked = false.obs;
   @override
   void onInit() {
     super.onInit();
     fetchPosts();
+    // final usex = GetStorage();
+    // liked(usex.read('isliked'));
   }
 
   Future<void> fetchPosts({categoryId = 1}) async {
@@ -20,11 +23,15 @@ class PostsController extends GetxController {
       postsList.clear();
 
       // postsList.addAll(posts);
-      if (postsList != null) {
-        postsList.addAll(posts);
-      }
+      postsList.addAll(posts);
     } finally {
       isLoading(false);
     }
   }
+
+  // void likedPost(id) {
+  //   liked.toggle();
+  //   final usex = GetStorage();
+  //   usex.write('isliked', liked.value);
+  // }
 }

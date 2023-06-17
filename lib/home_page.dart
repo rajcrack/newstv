@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newstv/controllers/category_controller.dart';
-import 'package:newstv/widget/news_card_widget.dart';
 
 import 'news_page.dart';
+import 'widget/drawer_for_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,13 +33,8 @@ class _HomePageState extends State<HomePage> {
       color: Colors.white,
       child: Obx(() {
         if (categoriesController.isLoading.value) {
-          return Center(
-            child: Column(
-              children: [
-                CircularProgressIndicator(),
-                Text('Data is Loading'),
-              ],
-            ),
+          return const Center(
+            child: CircularProgressIndicator(),
           );
         } else {
           return DefaultTabController(
@@ -48,7 +43,7 @@ class _HomePageState extends State<HomePage> {
             child: Scaffold(
               appBar: AppBar(
                 elevation: 0,
-                title: Text('NewsTV'),
+                title: const Text('NewsTV'),
                 bottom: TabBar(
                   tabs: categoriesController.categoriesList
                       .map((model) => tab(model.catTitle))
@@ -59,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                   indicatorSize: TabBarIndicatorSize.label,
                   indicatorColor: Colors.white,
                 ),
-                actions: [
+                actions: const [
                   Icon(Icons.search),
                   SizedBox(
                     width: 10,
@@ -74,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                           categoryId: model.id,
                           isreload: true))
                       .toList()),
+              drawer: const MyDrawer(),
             ),
           );
         }

@@ -18,7 +18,7 @@ class NewsModel {
   String author;
   String content;
   String image;
-  String category;
+  String cat_title;
 
   NewsModel({
     this.id = '1',
@@ -27,7 +27,7 @@ class NewsModel {
     this.author = '1',
     this.content = '1',
     this.image = '1',
-    this.category = '1',
+    this.cat_title = 'category',
   });
 
   factory NewsModel.fromJson(Map<String, dynamic> json) =>
@@ -38,7 +38,7 @@ class NewsModel {
         author: json["AUTHOR"],
         content: json["CONTENT"],
         image: json["IMAGE"],
-        category: json["CATEGORY"],
+        cat_title: json["cat_title"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -48,6 +48,6 @@ class NewsModel {
         "AUTHOR": author,
         "CONTENT": content,
         "IMAGE": image,
-        "CATEGORY": category,
+        "cat_title": cat_title,
       };
 }

@@ -16,8 +16,8 @@ class CategoriesController extends GetxController {
 
     try {
       isLoading(true);
-      if (categories.length > 0) {
-        categoriesList.clear();
+      categoriesList.clear();
+      if (categories.isNotEmpty) {
         categoriesList.addAll(categories);
       }
     } finally {
