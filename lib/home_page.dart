@@ -34,17 +34,17 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           elevation: 0,
           title: const Text('Free Fire Event'),
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {
-          //         postDetailController.darkMode();
-          //       },
-          //       icon: Icon(
-          //         postDetailController.dark.isFalse
-          //             ? CupertinoIcons.moon
-          //             : CupertinoIcons.sun_max_fill,
-          //       ))
-          // ],
+          actions: [
+            IconButton(
+                onPressed: () {
+                  postDetailController.darkMode();
+                },
+                icon: Icon(
+                  postDetailController.dark.isFalse
+                      ? CupertinoIcons.moon
+                      : CupertinoIcons.sun_max_fill,
+                ))
+          ],
         ),
         body: Container(
             color: postDetailController.dark.isFalse
