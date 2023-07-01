@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:newstv/model/category_model.dart';
-import 'package:newstv/services/api_services.dart';
+import '/model/category_model.dart';
+import '/services/api_services.dart';
 
 class CategoriesController extends GetxController {
   var isLoading = true.obs;

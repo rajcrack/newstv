@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:newstv/model/news_model.dart';
-import 'package:newstv/services/api_services.dart';
+import '/model/news_model.dart';
+import '/services/api_services.dart';
 
 class PostsController extends GetxController {
   var isLoading = true.obs;
   var postsList = <NewsModel>[].obs;
+  var iscat = false.obs;
   // var liked = false.obs;
   @override
   void onInit() {
@@ -15,7 +15,7 @@ class PostsController extends GetxController {
     // liked(usex.read('isliked'));
   }
 
-  Future<void> fetchPosts({categoryId = 1}) async {
+  Future<void> fetchPosts({categoryId = 'qwa'}) async {
     var posts = await APIService().fetchPosts(categoryId);
 
     try {

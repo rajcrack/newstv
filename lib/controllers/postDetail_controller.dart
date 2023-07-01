@@ -1,7 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:newstv/model/news_model.dart';
-import 'package:newstv/services/api_services.dart';
+import '/model/news_model.dart';
+import '/services/api_services.dart';
 
 class PostDetailController extends GetxController {
   var dark = false.obs;
@@ -16,7 +18,7 @@ class PostDetailController extends GetxController {
     dark(box.read('isdarkMode'));
   }
 
-  Future<void> fetchPostDetails({postId = 1}) async {
+  Future<void> fetchPostDetails({postId = '1'}) async {
     var postDetails =
         await APIService().fetchPostDetails(postId);
     try {

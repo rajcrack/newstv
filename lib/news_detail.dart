@@ -3,9 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:newstv/controllers/postDetail_controller.dart';
-// for using share uncomment this line
-//import 'package:share_plus/share_plus.dart';
+import 'controllers/postDetail_controller.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'utills/Layout_utills.dart';
 
@@ -177,15 +176,15 @@ class NewsDetail extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
-                // () async {
-                //   await Share.share(
-                //       'check out my website https://example.com'
-                // );
-                // },
-                icon: const Icon(
+                onPressed: () async {
+                  await Share.share(
+                      'check out my website https://example.com');
+                },
+                icon: Icon(
                   CupertinoIcons.arrowshape_turn_up_right,
-                  color: Colors.black,
+                  color: newsdetailController.dark.isFalse
+                      ? Colors.black
+                      : Colors.white,
                 ),
               ),
             ]),
@@ -193,9 +192,3 @@ class NewsDetail extends StatelessWidget {
         ]);
   }
 }
-
-// shareData() {
-//   return Share.share(
-//       'check out my website https://example.com',
-//       subject: 'Look what I made!');
-// }

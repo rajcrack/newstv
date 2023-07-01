@@ -2,6 +2,8 @@
 //
 //     final newsModel = newsModelFromJson(jsonString);
 
+// ignore_for_file: non_constant_identifier_names
+
 import 'dart:convert';
 
 List<NewsModel> newsModelFromJson(String str) =>

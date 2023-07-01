@@ -1,4 +1,4 @@
-package com.example.newstv
+package com.example.freefireevent
 
 import io.flutter.embedding.android.FlutterActivity
 

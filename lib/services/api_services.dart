@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
-import 'package:newstv/model/category_model.dart';
-import 'package:newstv/model/news_model.dart';
+import '/model/category_model.dart';
+import '/model/news_model.dart';
 import '../config.dart';
 
 class APIService {
@@ -48,4 +48,6 @@ class APIService {
       return List.empty();
     }
   }
+
+  ///default post page///
 }
